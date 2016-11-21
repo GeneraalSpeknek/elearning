@@ -59,7 +59,6 @@ namespace Elearning_wpf
         {
             new Dbs_Conn().ChangeVak(IdVak, tbVak.Text);
             PopulateLb();
-            tbVak.Text = "";
         }
 
         private void lbVakken_SelectionChanged(object sender, SelectionChangedEventArgs e)
