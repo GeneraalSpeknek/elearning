@@ -82,7 +82,7 @@ namespace Elearning_wpf
 
         private void btDelete_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult DeleteYesNo  = MessageBox.Show("Weet je zeker dat je dit vak wilt verwijderen?", "Foutmelding", MessageBoxButton.YesNo, MessageBoxImage.Asterisk);
+            MessageBoxResult DeleteYesNo  = MessageBox.Show("Weet je zeker dat je het vak '"+ tbVak.Text +"' wilt verwijderen?", "Foutmelding", MessageBoxButton.YesNo, MessageBoxImage.Asterisk);
             if (DeleteYesNo == MessageBoxResult.Yes)
             {
                 new Dbs_Conn().DeleteVak(IdVak);
