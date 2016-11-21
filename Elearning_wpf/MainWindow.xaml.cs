@@ -64,8 +64,17 @@ namespace Elearning_wpf
 
         private void lbVakken_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            IdVak = ((Vakken)(lbVakken.SelectedItem)).Id;
-            tbVak.Text = ((Vakken)(lbVakken.SelectedItem)).VakNaam;
+            if (lbVakken.SelectedItem!=null)
+            {
+                IdVak = ((Vakken)(lbVakken.SelectedItem)).Id;
+                tbVak.Text = ((Vakken)(lbVakken.SelectedItem)).VakNaam;
+            }
+            
+
+        }
+
+        private void btDelete_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
