@@ -49,9 +49,16 @@ namespace Elearning_wpf
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            //voeg inhoud van textbox toe aan database
-            new Dbs_Conn().AddVak(tbVak.Text);
-            PopulateLb();
+            if (tbVak.Text != "")
+            {
+                //voeg inhoud van textbox toe aan database
+                new Dbs_Conn().AddVak(tbVak.Text);
+                PopulateLb();
+            }
+            if (tbVak.Text == "")
+            {
+                MessageBox.Show("Voer een geldige waarde in!","Foutmelding",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
             tbVak.Text = "";
         }
 
@@ -75,6 +82,10 @@ namespace Elearning_wpf
 
         private void btDelete_Click(object sender, RoutedEventArgs e)
         {
+            new Dbs_Conn().DeleteVak(IdVak);
+            IdVak = ((Vakken)(lbVakken.SelectedItem)).Id;
+            PopulateLb();
+            tbVak.Text = "";
 
         }
     }
